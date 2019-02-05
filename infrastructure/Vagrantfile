@@ -24,6 +24,7 @@ Vagrant.configure("2") do |config|
     ubuntu.vm.provider "virtualbox" do |vb|
       vb.memory = "1024"
     end
+    ubuntu.vm.provision "shell", path: "../provision/xwiki-setup.sh"
   end
 
   config.vm.define "centos7" do |centos|
